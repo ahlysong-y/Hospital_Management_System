@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Kantumruy Pro', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; filter: blur(40px); transform: scale(1); }
+    50% { opacity: 0.7; filter: blur(50px); transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* Glassmorphism Design System */
+.glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+}
+
+.dark .glass-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(203, 213, 225, 0.6);
+}
+
+.dark .glass-panel {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(30, 41, 59, 0.7);
+}
+
+/* Glowing Neon Accents */
+.glow-teal {
+    box-shadow: 0 0 25px -5px rgba(13, 148, 136, 0.35);
+}
+
+.glow-emerald {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+}
+
+.glow-indigo {
+    box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.35);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-text {
+    background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Global Dark Mode Overrides for Tailwind v4 Class-based Dark Mode */
+html.dark {
+    color-scheme: dark;
+    background-color: #030712 !important;
+    color: #f8fafc !important;
+}
+
+html.dark body {
+    background-color: #030712 !important;
+    color: #f8fafc !important;
+}
+
+html.dark header {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    border-color: rgba(30, 41, 59, 0.8) !important;
+    backdrop-filter: blur(16px);
+}
+
+html.dark .bg-white {
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    color: #f8fafc !important;
+    border-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+html.dark .bg-slate-50 {
+    background-color: #030712 !important;
+    color: #f8fafc !important;
+}
+
+html.dark .bg-slate-100 {
+    background-color: rgba(30, 41, 59, 0.7) !important;
+    color: #f8fafc !important;
+}
+
+html.dark .text-slate-800,
+html.dark .text-slate-900,
+html.dark .text-slate-700 {
+    color: #f8fafc !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-600 {
+    color: #94a3b8 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-100 {
+    border-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    color: #f8fafc !important;
+    border-color: rgba(51, 65, 85, 0.8) !important;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: #030712;
+}
+html.dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+}
+
+@layer utilities {
+    /* Custom Thin Scrollbar */
+    ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+    /* Serene Card Utility */
+    .medical-card {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        border-radius: 1.25rem;
+        box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .medical-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px -10px rgba(13, 148, 136, 0.15);
+    }
+}
+
