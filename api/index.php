@@ -1,5 +1,9 @@
 <?php
 
+putenv('VERCEL=1');
+$_ENV['VERCEL'] = '1';
+$_SERVER['VERCEL'] = '1';
+
 // Prepare required storage directory structure in ephemeral /tmp for Vercel Serverless
 $storage = '/tmp/storage';
 $dirs = [
