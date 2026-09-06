@@ -41,6 +41,7 @@
     "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
     "CACHE_STORE": "array",
     "SESSION_DRIVER": "cookie",
+    "DB_CONNECTION": "mysql",
     "LOG_CHANNEL": "stderr"
   }
 }
