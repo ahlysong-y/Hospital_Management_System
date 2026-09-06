@@ -14,6 +14,7 @@ use App\Models\NursingLog;
 use App\Models\Meeting;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +33,24 @@ class DatabaseSeeder extends Seeder
             'name' => 'មន្ទីរពេទ្យស្មាតឃែរ សាខាសៀមរាប',
             'location' => 'ខេត្តសៀមរាប',
             'contact_number' => '063 777 888',
+        ]);
+
+        Branch::create([
+            'name' => 'សាខាភ្នំពេញ',
+            'location' => 'រាជធានីភ្នំពេញ',
+            'contact_number' => '012333444',
+        ]);
+
+        Branch::create([
+            'name' => 'សាខាសៀមរាប',
+            'location' => 'ខេត្តសៀមរាប',
+            'contact_number' => '012555666',
+        ]);
+
+        Branch::create([
+            'name' => 'សាខាបាត់ដំបង',
+            'location' => 'ខេត្តបាត់ដំបង',
+            'contact_number' => '012777888',
         ]);
 
         $deptOPD = Department::create([
@@ -199,5 +218,4 @@ class DatabaseSeeder extends Seeder
             'notes' => 'ថ្លៃពិគ្រោះជំងឺក្រៅ OPD និងថ្នាំពេទ្យ',
         ]);
     }
-
 }
